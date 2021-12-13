@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {View,Text,ScrollView,Image,TextInput,TouchableOpacity,StyleSheet} from "react-native";
-import {useNavigation} from "@react-navigation/native"
+import {Link, useNavigation} from "@react-navigation/native"
 import Checkbox from 'expo-checkbox';
 import {LinearGradient} from 'expo-linear-gradient';
 import {Linha} from "../components/Separador";
- 
+import UselessTextInputMultiline  from "../components/Input";
 
 
 export const AmazonLogin=()=>{
@@ -26,12 +26,13 @@ return(
         <View style={{alignItems:"stretch"}}>
           <Text style={{textAlign:"right",color:"#09d",fontSize:15, marginEnd:25}}>Esqueci a Senha </Text>
           <View style={{alignItems:"center", justifyContent:"center"  }}>
-            <TextInput style={{backgroundColor:"#4F4F4F",width:300,height:40 ,marginTop:10, borderWidth:1,borderColor:"#808080", borderRadius:5}}/>
-            <TextInput style={{backgroundColor:"#4F4F4F",width:300,height:40,borderWidth:1,borderColor:"#808080", borderRadius:5 }}/>
+            <TextInput   style={styles.input1}/>
+            <TextInput style={styles.input2}/>
+            
           </View>
         </View>  
 
-        
+        {/* <UselessTextInputMultiline/> */}
 
         <View style={styles.section}>
           <Checkbox style={styles.checkbox} value={isChecked} onValueChange ={setChecked} /> 
@@ -54,7 +55,7 @@ return(
        </View>  
       
         <TouchableOpacity 
-          onPress={()=> navigation.navigate("Login")}
+          
           style={{borderWidth:1, borderColor:"#808080",backgroundColor:"#4F4F4F",padding:5,borderRadius:3,margin:20,paddingBottom:20,paddingTop:15 }}>
           <Text style={{textAlign:"center", color:"#fff"}}>Criar uma nova conta Amazon</Text>
         </TouchableOpacity>
@@ -100,6 +101,29 @@ section: {
 },
 paragraph: {
   fontSize: 15,color:"#fff"
+},
+
+
+input1:{
+  backgroundColor:"#4F4F4F",
+  width:300,
+  height:40 ,
+  marginTop:10,
+   borderWidth:1,
+   borderColor:"#808080",
+    borderRadius:5
+
+},
+
+input2:{
+  backgroundColor:"#4F4F4F",
+  width:300,
+  height:40 ,
+  marginTop:10,
+   borderWidth:1,
+   borderColor:"orange",
+    borderRadius:5
+
 },
 
 });
