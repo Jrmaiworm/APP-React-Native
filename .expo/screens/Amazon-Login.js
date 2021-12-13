@@ -1,15 +1,22 @@
 import React, {useState} from "react";
-import {View,Text,ScrollView,Image,TextInput,TouchableOpacity,StyleSheet} from "react-native";
-import {Link, useNavigation} from "@react-navigation/native"
+import {View,Text,ScrollView,Image,TextInput,TouchableOpacity,StyleSheet, TouchableHighlight} from "react-native";
+import {useNavigation} from "@react-navigation/native"
 import Checkbox from 'expo-checkbox';
 import {LinearGradient} from 'expo-linear-gradient';
 import {Linha} from "../components/Separador";
-import UselessTextInputMultiline  from "../components/Input";
+
 
 
 export const AmazonLogin=()=>{
 const navigation=useNavigation();
 const [isChecked, setChecked] = useState(false);
+const [borda, setBorda]=useState(true);
+
+let bord = styles.input1;
+let bord2 = styles.input2;
+ 
+ 
+
 
 return(
 
@@ -26,8 +33,9 @@ return(
         <View style={{alignItems:"stretch"}}>
           <Text style={{textAlign:"right",color:"#09d",fontSize:15, marginEnd:25}}>Esqueci a Senha </Text>
           <View style={{alignItems:"center", justifyContent:"center"  }}>
-            <TextInput   style={styles.input1}/>
-            <TextInput style={styles.input2}/>
+
+            <TextInput placeholder="E-mail ou número de telefone"  style={borda ? bord : bord2} value={borda} onChangeText= {setBorda}  />
+            <TextInput secureTextEntry={true} placeholder="Senha Amazon" style={borda ? bord : bord2} onChange={setBorda}  />
             
           </View>
         </View>  
@@ -44,7 +52,7 @@ return(
           style={{backgroundColor:" rgba(235,163,6,1) ",padding:5,borderRadius:3,margin:20,paddingBottom:20,paddingTop:15 }}>
           <Text style={{textAlign:"center", color:"#fff"}}>Fazer login</Text>
         </TouchableOpacity>
-        
+       
        
         <Text style={{margin:20 , color:"#fff"}}>Ao continuar, você concorda com as <Text style={{color:"#09d"}}>Condições de Uso</Text> Condições de Uso e com a <Text style={{color:"#09d"}}> Política de Privacidade</Text> da Amazon.</Text>
    
@@ -69,7 +77,11 @@ return(
         
          </View>
         </LinearGradient>
-       
+      
+
+
+
+      
      
             </ScrollView>  
      </View>
@@ -111,8 +123,10 @@ input1:{
   marginTop:10,
    borderWidth:1,
    borderColor:"#808080",
-    borderRadius:5
-
+    borderRadius:5,
+    color:"#fff",
+    paddingStart:5
+    
 },
 
 input2:{
@@ -122,8 +136,9 @@ input2:{
   marginTop:10,
    borderWidth:1,
    borderColor:"orange",
-    borderRadius:5
-
+    borderRadius:5,
+    color:"#fff",
+    paddingStart:5
 },
 
 });

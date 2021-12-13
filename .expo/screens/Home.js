@@ -18,12 +18,15 @@ export const Login = () => {
         <Cabecalho/>
      
 <ScrollView>
-
-            <View style = {{ width: "100%", height: 50, flexDirection: "row", justifyContent: "center", alignItems: "stretch", margin: 5 }}>
+                
+                <View style = {{ width: "100%", height: 50, flexDirection: "row", justifyContent: "center", alignItems: "stretch", margin: 5 }}>
+                <TouchableOpacity>
                 <View style = {{ flexGrow: 1, justifyContent: "center", alignItems: "center", borderBottomColor: "#fff", borderWidth: 2, borderColor: "#333" }}>
                 <Text style = { styles.text } > Página inicial </Text>
                 </View>
-            
+                </TouchableOpacity>  
+              
+              
                 <View style = {{ flexGrow: 1, justifyContent: "center", alignItems: "center" }}>
                 <Text style = { styles.text1 } > Séries </Text>
                 </View >

@@ -1,6 +1,3 @@
-import React from 'react';
-import { View, TextInput } from 'react-native';
-
 const UselessTextInput = props => {
   return (
     <TextInput
@@ -20,7 +17,7 @@ const UselessTextInputMultiline = () => {
     <View
       style={{
         backgroundColor: value,
-        borderBottomColor: '#000000',
+        borderBottomColor: '#e34',
         borderBottomWidth: 1,
       }}>
       <UselessTextInput
